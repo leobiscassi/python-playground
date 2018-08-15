@@ -11,3 +11,5 @@ Some examples and exercises of the [Introduction to programming with python](htt
 [Chapter 4](https://github.com/leobiscassi/python-playground/tree/master/references/intro-prog-python/04-condicoes) - Condições
 
 [Chapter 5](https://github.com/leobiscassi/python-playground/tree/master/references/intro-prog-python/05-repeticoes) - Repetições
+
+[Chapter 6](https://github.com/leobiscassi/python-playground/tree/master/references/intro-prog-python/06-listas) - Listas
