@@ -1,5 +1,5 @@
 # Python Playground
-Repositório onde dou meus *baby steps* na linguagem python.
+Repositório onde dou meus *baby-steps* na linguagem python.
 
 ## Referências
 
