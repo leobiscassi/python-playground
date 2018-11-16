@@ -5,7 +5,6 @@
 l = [15, 7, 27, 39]
 
 p = int(input("Digite o valor a procurar: "))
-achou = False
 
 x = 0
 
