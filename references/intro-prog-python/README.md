@@ -13,3 +13,5 @@ Exemplos e exercícios do livro [Introdução à programação com python](https
 [Capítulo 5](https://github.com/leobiscassi/python-playground/tree/master/references/intro-prog-python/05-repeticoes) - Repetições
 
 [Capítulo 6](https://github.com/leobiscassi/python-playground/tree/master/references/intro-prog-python/06-listas) - Listas
+
+[Capítulo 7](https://github.com/leobiscassi/python-playground/tree/master/references/intro-prog-python/06-strings) - Strings
