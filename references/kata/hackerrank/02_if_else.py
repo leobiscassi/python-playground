@@ -1,3 +1,8 @@
+'''
+    Name: Python If-Else
+    Link: https://www.hackerrank.com/challenges/py-if-else
+'''
+
 N = int(input())
 
 if N % 2 != 0:
