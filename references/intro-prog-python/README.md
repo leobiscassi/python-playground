@@ -19,3 +19,5 @@ Exemplos e exercícios do livro [Introdução à programação com python](https
 [Capítulo 8](https://github.com/leobiscassi/python-playground/tree/master/references/intro-prog-python/08-funcoes) - Funções
 
 [Capítulo 9](https://github.com/leobiscassi/python-playground/tree/master/references/intro-prog-python/09-arquivos) - Arquivos
+
+[Capítulo 10](https://github.com/leobiscassi/python-playground/tree/master/references/intro-prog-python/10-oop) - Orientação à Objetos
