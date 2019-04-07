@@ -12,10 +12,10 @@ class PeopleModel(Model):
     __table_name__ = "people"
     connection.setup(["172.17.0.2"], "api_test", protocol_version=3)
 
-    id = columns.UUID(primary_key=True, default=uuid.uuid4())
+    id = columns.UUID(primary_key=True)
     first_name = columns.Text(required=True)
     last_name = columns.Text(required=True, index=True)
-    dt_insert = columns.Date(default=datetime.now())
+    dt_insert = columns.DateTime(required=True)
 
     def validate(self):
         '''

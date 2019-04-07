@@ -1,6 +1,8 @@
 from models.people import PeopleModel, PeopleSchema
 from flask_restful import Resource, abort
 from flask import request
+from uuid import uuid4
+from datetime import datetime
 
 class People(Resource):
     '''
@@ -70,12 +72,14 @@ class People(Resource):
         people = PeopleModel()
 
         try:
-            person = people.create(first_name=data.get('first_name'), last_name=data.get('last_name'))
+            person = people.create(id=uuid4(), first_name=data.get('first_name'), last_name=data.get('last_name'),
+                                   dt_insert=datetime.now())
         except:
             abort(406, message="Verify your data!")
 
         schema = PeopleSchema()
         result = schema.dump(person)
+        del people
 
         return result
 
