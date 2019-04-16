@@ -366,5 +366,91 @@ class AppAgenda:
                 break
 
     def novo_telefone(self, dados):
-        pass
+        telefone = AppAgenda.pede_telefone()
+        if nulo_ou_vazio(telefone):
+            return
+
+        if dados.pesquisaTelefone(telefone) != None:
+            print("Telefone já existe")
+        tipo = self.pede_tipo_telefone()
+        dados.telefones.adiciona(Telefone(telefone, tipo))
+
+    def apaga_telefone(self, dados):
+        t = valida_faixa_inteiro_ou_branco(
+            "Digite a posição do número a apagar, enter para sair: ",
+            0, len(dados.telefones)-1
+        )
+
+        if t == None:
+            return
+
+        dados.telefones.remove(dados.telefones[t])
+
+    def altera_telefones(self, dados):
+        t = valida_faixa_inteiro_ou_branco(
+            "Digite a posição do número a alterar, enter para sair: ",
+            0, len(dados.telefones)-1
+        )
+
+        if t == None:
+            return
+
+        telefone = dados.telefones[t]
+        print(f"Telefone: {telefone}")
+        print("Digite enter caso não queira alterar o número")
+        novotelefone = AppAgenda.pede_telefone()
+
+        if not nulo_ou_vazio(novotelefone):
+            telefone.numero = novotelefone
+        print("Digite enter caso não queira alterar o tipo")
+        telefone.tipo = self.pede_tipo_telefone(
+            self.agenda.tiposTelefone.pesquisa(telefone.tipo)
+        )
+
+    def lista(self):
+        print("\nAgenda")
+        print("-"*60)
+        for e in self.agenda:
+            AppAgenda.mostra_dados(e)
+        print("-"*60)
+
+    def le(self, nome_arquivo=None):
+        if nome_arquivo == None:
+            nome_arquivo = AppAgenda.pede_nome_arquivo()
+        if nulo_ou_vazio(nome_arquivo):
+            return
+
+        with open(nome_arquivo, "rb") as arquivo:
+            self.agenda = pickle.load(arquivo)
+
+        self.ultimo_nome = nome_arquivo
+
+    def ordena(self):
+        self.agenda.ordena()
+        print("\nAgenda ordenada\n")
+
+    def grava(self):
+        if self.ultimo_nome != None:
+            print(f"Último nome utilizado foi {self.ultimo_nome}")
+            print("Digite enter caso queira utilizar o mesmo nome")
+
+        nome_arquivo = AppAgenda.pede_nome_arquivo()
+        if nulo_ou_vazio(nome_arquivo):
+            if self.ultimo_nome != None:
+                nome_arquivo = self.ultimo_nome
+            else:
+                return
+
+        with open(nome_arquivo, "wb") as arquivo:
+            pickle.dump(self.agenda, arquivo)
+
+    def execute(self):
+        self.menu.execute()
+
+if __name__ == '__main__':
+    app = AppAgenda()
+
+    if len(sys.argv) > 1:
+        app.le(sys.argv[1])
+    app.execute()
 
