@@ -1,7 +1,9 @@
 from points import Point
 from rectangles import Rectangle
+from mytime import MyTime, add_time, increment
 
 if __name__ == '__main__':
+    '''
     box = Rectangle(Point(0, 0), 100, 200)
     bomb = Rectangle(Point(100, 80), 5, 10)
 
@@ -31,3 +33,16 @@ if __name__ == '__main__':
     a = [2, 3]
     b = [2, 3]
     print("== on lists a and b returns ", a == b)
+    '''
+
+    tim1 = MyTime(11, 59, 30)
+    print(tim1)
+
+    current_time = MyTime(9, 65, 30)
+    bread_time = MyTime(3, 35, 0)
+    done_time = add_time(current_time, bread_time)
+    print(done_time)
+
+    print(tim1)
+    tim1.increment(121)
+    print(tim1)
