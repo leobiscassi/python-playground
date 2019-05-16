@@ -5,12 +5,21 @@ class Point:
         self.x = x
         self.y = y
 
+    def __str__(self):
+        return f"({self.x}, {self.y})"
+
+    def __add__(self, other):
+        return Point(self.x + other.x, self.y + other.y)
+
+    def __mul__(self, other):
+        return self.x*other.x + self.y*other.y
+
+    def __rmul__(self, other):
+        return Point(other * self.x, other * self.y)
+
     def distance_from_origin(self):
         """Compute my distance from the origin"""
         return ((self.x ** 2) + (self.y ** 2)) ** 0.5
-
-    def __str__(self):
-        return f"({self.x}, {self.y})"
 
     def halfway(self, target):
         """Return the halfway point between myself and the target"""
