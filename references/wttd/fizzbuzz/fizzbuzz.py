@@ -23,19 +23,30 @@ def robot(pos):
         say = 'fizz'
     return say
 
+
+def assert_equal(result, expected):
+    from sys import _getframe
+    if not result == expected:
+        current = _getframe()
+        caller = current.f_back
+        line_no = caller.f_lineno
+
+        print(f'Fail: Line {line_no} got {result} expecting {expected}')
+
+
 if __name__ == '__main__':
-    assert robot(1) == '1'
-    assert robot(2) == '2'
-    assert robot(4) == '4'
+    assert_equal(robot(1), '1')
+    assert_equal(robot(2), '2')
+    assert_equal(robot(4), '4')
 
-    assert robot(3) == 'fizz'
-    assert robot(6) == 'fizz'
-    assert robot(9) == 'fizz'
+    assert_equal(robot(3), 'fizz')
+    assert_equal(robot(6), 'fizz')
+    assert_equal(robot(9), 'fizz')
 
-    assert robot(5) == 'buzz'
-    assert robot(10) == 'buzz'
-    assert robot(20) == 'buzz'
+    assert_equal(robot(5), 'buzz')
+    assert_equal(robot(10),  'buzz')
+    assert_equal(robot(20),  'buzz')
 
-    assert robot(15) == 'fizzbuzz'
-    assert robot(30) == 'fizzbuzz'
-    assert robot(45) == 'fizzbuzz'
+    assert_equal(robot(15), 'fizzbuzz')
+    assert_equal(robot(30), 'fizzbuzz')
+    assert_equal(robot(45), 'fizzbuzz')
