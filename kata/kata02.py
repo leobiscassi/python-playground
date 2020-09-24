@@ -1,4 +1,6 @@
 """
+    @olist
+
     1. Considere a instrução python a seguir e indique qual alternativa corresponde ao resultado da
     execução.
 """

@@ -1,4 +1,6 @@
 """
+    @olist
+    
     3. Dado o código abaixo, complete com código python (quantas linhas
     forem necessárias) para que a impressão realizada na última linha
     tenha como resultado 'Python':

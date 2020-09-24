@@ -1,4 +1,6 @@
 """
+    @olist
+    
     2. Analisando o código python a seguir, o conjunto de palavras exibidas pela
     execução deste código, na ordem, é:
 """

@@ -1,5 +1,5 @@
 '''
-    Kata #01 - https://www.codewars.com/kata/591588d49f4056e13f000001
+    @codewars - https://www.codewars.com/kata/591588d49f4056e13f000001
     Date: 02/02/2020
     Author: Léo Biscassi
 '''
